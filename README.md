@@ -20,6 +20,8 @@ as well as generate strings for display of the following listings:
 
 Included is a small sample script that will print these three pieces of information for an object file passed in as an argument at the command prompt.
 
+###The weird variable and function names
+I like verbose, self-documenting variable and function names. However, I wanted to maintain some degree of parity between the ELF spec and my code, so you will find lots of funky old-skool c programming identifiers.
 
 ###TODO:
 1. Implement a subset of the ABI name mangling spec so that Keebler can demangle symbol names unpacked from ELF binaries compiled by clang / LLVM and GCC.
