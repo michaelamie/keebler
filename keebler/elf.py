@@ -61,12 +61,12 @@ class ElfData(object):
     def _sorted_symbol_string_from_list(self, symbols=[]):
         return '\n'.join(sorted(symbols, key=lambda s: s.lower().replace('_', '')))
 
-    
+
     def _symtab_with_null_and_file_symbols_stripped(self):
-        return filter(
-            lambda entry: ord(entry['st_info']) != STT_FILE and entry['st_name'] != 0,
-            self.symtab
-        )
+        return [
+            entry for entry in self.symtab
+            if ord(entry['st_info']) != STT_FILE and entry['st_name'] != 0
+        ]
 
 
     def _unpack_e_ident(self):
